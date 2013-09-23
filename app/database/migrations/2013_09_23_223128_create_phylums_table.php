@@ -14,7 +14,7 @@ class CreatePhylumsTable extends Migration {
 	{
 		Schema::create('phylums', function(Blueprint $table) {
 			$table->increments('id');
-			$table->string('name');
+			$table->string('name')->unique();
 			$table->timestamps();
 		});
 	}

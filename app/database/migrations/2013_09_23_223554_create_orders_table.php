@@ -14,7 +14,7 @@ class CreateOrdersTable extends Migration {
 	{
 		Schema::create('orders', function(Blueprint $table) {
 			$table->increments('id');
-			$table->string('name');
+			$table->string('name')->unique();
 			$table->timestamps();
 
 			$table->foreign('class_id')->references('id')->on('classes');

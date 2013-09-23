@@ -14,9 +14,9 @@ class CreateSubfamilesTable extends Migration {
 	{
 		Schema::create('subfamiles', function(Blueprint $table) {
 			$table->increments('id');
-			$table->string('name');
-			$table->boolean('old_world');
-			$table->boolean('new_world');
+			$table->string('name')->unique();
+			$table->boolean('old_world')->default(0);
+			$table->boolean('new_world')->default(0);
 			$table->timestamps();
 
 			$table->foreign('family_id')->references('id')->on('families');

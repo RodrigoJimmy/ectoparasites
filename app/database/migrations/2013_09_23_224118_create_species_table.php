@@ -14,7 +14,7 @@ class CreateSpeciesTable extends Migration {
 	{
 		Schema::create('species', function(Blueprint $table) {
 			$table->increments('id');
-			$table->string('name');
+			$table->string('name')->unique();
 			$table->timestamps();
 
 			$table->foreign('genre_id')->references('id')->on('genres');
