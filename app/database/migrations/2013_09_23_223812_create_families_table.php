@@ -16,6 +16,7 @@ class CreateFamiliesTable extends Migration {
 			$table->increments('id');
 			$table->string('name')->unique();
 			$table->date('year');
+			$table->integer('order_id')->unsigned();
 			$table->timestamps();
 
 			$table->foreign('order_id')->references('id')->on('orders');

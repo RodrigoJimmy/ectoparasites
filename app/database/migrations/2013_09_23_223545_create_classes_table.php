@@ -15,6 +15,7 @@ class CreateClassesTable extends Migration {
 		Schema::create('classes', function(Blueprint $table) {
 			$table->increments('id');
 			$table->string('name')->unique();
+			$table->integer('phylum_id')->unsigned();
 			$table->timestamps();
 
 			$table->foreign('phylum_id')->references('id')->on('phylums');

@@ -15,6 +15,7 @@ class CreateGenresTable extends Migration {
 		Schema::create('genres', function(Blueprint $table) {
 			$table->increments('id');
 			$table->string('name')->unique();
+			$table->integer('subfamily_id')->unsigned();
 			$table->timestamps();
 
 			$table->foreign('subfamily_id')->references('id')->on('subfamilies');
