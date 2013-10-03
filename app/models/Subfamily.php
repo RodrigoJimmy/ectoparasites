@@ -9,11 +9,11 @@ class Subfamily extends Eloquent {
 
 	public function genres()
 	{
-		$this->hasMany('Genre');
+		return $this->hasMany('Genre');
 	}
 
 	public function family()
 	{
-		$this->belongsTo('Family');
+		return $this->belongsTo('Family');
 	}
 }

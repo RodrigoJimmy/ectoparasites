@@ -9,11 +9,11 @@ class Order extends Eloquent {
 
 	public function families()
 	{
-		$this->hasMany('Family');
+		return $this->hasMany('Family');
 	}
 
 	public function bioclass()
 	{
-		$this->belongsTo('Bioclass', 'class_id');
+		return $this->belongsTo('Bioclass', 'class_id');
 	}
 }

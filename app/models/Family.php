@@ -9,11 +9,11 @@ class Family extends Eloquent {
 
 	public function subfamilies()
 	{
-		$this->hasMany('Subfamily');
+		return $this->hasMany('Subfamily');
 	}
 
 	public function order()
 	{
-		$this->belongsTo('Order');
+		return $this->belongsTo('Order');
 	}
 }

@@ -11,6 +11,6 @@ class Species extends Eloquent {
 	// relationships
 	public function genre()
 	{
-		$this->belongsTo('Genre');
+		return $this->belongsTo('Genre');
 	}
 }
