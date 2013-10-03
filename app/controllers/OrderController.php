@@ -58,7 +58,9 @@ class OrderController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		//
+		$order = Order::findOrFail($id);
+
+		return View::make('order.show', compact('order'));
 	}
 
 	/**
@@ -69,7 +71,16 @@ class OrderController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		//
+		$order = Order::find($id);
+		$bioclasses = Bioclass::lists('name', 'id');
+
+		if (is_null($order))
+		{
+			return Redirect::route('order.index');
+		}
+
+		return View::make('order.edit', compact('order'))
+			->with('bioclasses', $bioclasses);
 	}
 
 	/**
@@ -80,7 +91,21 @@ class OrderController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		//
+		$input = array_except(Input::all(), '_method');
+		$validation = Validator::make($input, Order::$rules);
+
+		if ($validation->passes())
+		{
+			$order = Order::find($id);
+			$order->update($input);
+
+			return Redirect::route('order.show', $id);
+		}
+
+		return Redirect::route('order.edit', $id)
+			->withInput()
+			->withErrors($validation)
+			->with('message', 'There were validation errors.');
 	}
 
 	/**
@@ -91,7 +116,9 @@ class OrderController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		//
+		Order::find($id)->delete();
+
+		return Redirect::route('order.index');
 	}
 
 }
