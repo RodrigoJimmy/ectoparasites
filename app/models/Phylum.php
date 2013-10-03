@@ -6,4 +6,10 @@ class Phylum extends Eloquent {
 	public static $rules = array(
 		'name'	=> 'required'
 	);
+
+	// relationships
+	public function bioclasses()
+	{
+		return $this->hasMany('Bioclass');
+	}
 }
