@@ -15,7 +15,7 @@ class CreateFamiliesTable extends Migration {
 		Schema::create('families', function(Blueprint $table) {
 			$table->increments('id');
 			$table->string('name')->unique();
-			$table->date('year');
+			$table->date('year')->default('0000-00-00');
 			$table->integer('order_id')->unsigned();
 			$table->timestamps();
 
