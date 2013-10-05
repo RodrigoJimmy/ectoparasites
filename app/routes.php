@@ -19,3 +19,4 @@ Route::get('/', function()
 Route::resource('phylum', 'PhylumController');
 Route::resource('class', 'BioclassController');
 Route::resource('order', 'OrderController');
+Route::resource('family', 'FamilyController');
