@@ -22,3 +22,4 @@ Route::resource('order', 'OrderController');
 Route::resource('family', 'FamilyController');
 Route::resource('subfamily', 'SubfamilyController');
 Route::resource('genre', 'GenreController');
+Route::resource('species', 'SpeciesController');
