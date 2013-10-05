@@ -21,3 +21,4 @@ Route::resource('class', 'BioclassController');
 Route::resource('order', 'OrderController');
 Route::resource('family', 'FamilyController');
 Route::resource('subfamily', 'SubfamilyController');
+Route::resource('genre', 'GenreController');
