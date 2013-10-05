@@ -10,7 +10,7 @@
 	<thead>
 		<tr>
 			<th>Name</th>
-			<th>Subfamily</th>
+			<th>Family</th>
 		</tr>
 	</thead>
 

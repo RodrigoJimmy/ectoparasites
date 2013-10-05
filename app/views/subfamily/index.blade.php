@@ -11,6 +11,8 @@
 		<thead>
 			<tr>
 				<th>Name</th>
+				<th>Old World</th>
+				<th>New World</th>
 				<th>Family</th>
 			</tr>
 		</thead>
@@ -19,6 +21,8 @@
 			@foreach ($subfamilies as $subfamily)
 				<tr>
 					<td>{{{ $subfamily->name }}}
+					<td>{{{ $subfamily->old_world }}}
+					<td>{{{ $subfamily->new_world }}}
 					<td>{{{ $subfamily->family->name }}}
 					<td>{{ link_to_route('subfamily.edit', 'Edit', array($subfamily->id), array('class' => 'btn btn-info')) }}</td>
 					<td> 
