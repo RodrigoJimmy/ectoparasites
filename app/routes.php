@@ -23,3 +23,6 @@ Route::resource('family', 'FamilyController');
 Route::resource('subfamily', 'SubfamilyController');
 Route::resource('genre', 'GenreController');
 Route::resource('species', 'SpeciesController');
+Route::get('taxonomy', function() {
+	return Redirect::route('phylum.index');
+});
