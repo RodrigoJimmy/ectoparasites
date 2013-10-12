@@ -9,7 +9,9 @@ class SearchController extends \BaseController {
 	 */
 	public function index()
 	{
-		return View::make('search.index');
+		$searches = Search::all();
+
+		return View::make('search.index', compact('searches'));
 	}
 
 	/**
@@ -19,7 +21,10 @@ class SearchController extends \BaseController {
 	 */
 	public function create()
 	{
-		//
+		$species = Species::lists('name', 'id');
+
+		return View::make('search.create')
+			->with('species', $species);
 	}
 
 	/**
@@ -29,7 +34,17 @@ class SearchController extends \BaseController {
 	 */
 	public function store()
 	{
-		//
+		$input = Input::all();
+
+		foreach($input['species_id'] as $species_id)
+		{
+			$data['species_id'] = $species_id;
+			Search::create($data);
+
+		}
+
+		return Redirect::route('search.index');
+
 	}
 
 	/**
