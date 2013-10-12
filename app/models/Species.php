@@ -9,6 +9,12 @@ class Species extends Eloquent {
 	public static $rules = array();
 
 	// relationships
+
+	public function searches()
+	{
+		return $this->hasMany('Search');
+	}
+
 	public function genre()
 	{
 		return $this->belongsTo('Genre');
