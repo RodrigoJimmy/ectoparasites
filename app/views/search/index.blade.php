@@ -26,6 +26,7 @@
 					<td>{{{ $search->species->name }}}</td>
 					<td>{{{ $search->created_at }}}</td>
 					<td>{{{ $search->updated_at }}}</td>
+					<td>{{ link_to_route('search.show', 'Show', array($search->id), array('class' => 'btn btn-info')) }}</td>
 				</tr>
 			@endforeach
 		</tbody>

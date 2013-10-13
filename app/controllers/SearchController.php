@@ -55,7 +55,9 @@ class SearchController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		//
+		$search = Search::findOrFail($id);
+
+		return View::make('search.show', compact('search'));
 	}
 
 	/**
@@ -88,7 +90,9 @@ class SearchController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		//
+		Search::find($id)->delete();
+
+		return Redirect::route('search.index');
 	}
 
 }
