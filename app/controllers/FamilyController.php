@@ -116,7 +116,7 @@ class FamilyController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		Family::find('$id')->delete();
+		Family::find('id')->delete();
 
 		return Redirect::route('family.index');
 	}
