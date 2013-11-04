@@ -11,3 +11,6 @@
 |
 */
 
+Artisan::add(new RunSearchesCommand);
+Artisan::add(new GetIrnsCommand);
+Artisan::add(new RunIrnsQueryCommand);
