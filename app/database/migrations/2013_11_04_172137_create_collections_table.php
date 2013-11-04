@@ -18,7 +18,9 @@ class CreateCollectionsTable extends Migration {
 
 			$table->integer('species_id')->unsigned();
 			$table->integer('host_id')->unsigned();
+			$table->integer('state_id')->unsigned();
 			$table->integer('collector_id')->unsigned();
+			$table->string('precise_location')->nullable();
 			$table->date('collection_start_date');
 			$table->date('collection_end_date');
 			$table->string('lot_number');
@@ -28,6 +30,7 @@ class CreateCollectionsTable extends Migration {
 
 			$table->foreign('species_id')->references('id')->on('species');
 			$table->foreign('host_id')->references('id')->on('hosts');
+			$table->foreign('state_id')->references('id')->on('states');
 			$table->foreign('collector_id')->references('id')->on('collectors');
 
 		});	
