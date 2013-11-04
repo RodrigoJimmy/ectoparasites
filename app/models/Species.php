@@ -15,8 +15,15 @@ class Species extends Eloquent {
 		return $this->hasMany('Search');
 	}
 
+	public function collections()
+	{
+		return $this->hasMany('Collection');
+	}
+
 	public function genre()
 	{
 		return $this->belongsTo('Genre');
 	}
+
+
 }
