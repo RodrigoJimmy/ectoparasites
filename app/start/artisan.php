@@ -14,3 +14,5 @@
 Artisan::add(new RunSearchesCommand);
 Artisan::add(new GetIrnsCommand);
 Artisan::add(new RunIrnsQueryCommand);
+Artisan::add(new ParseIrnResponseCommand);
+Artisan::add(new InsertIrnsFromCsvCommand);
